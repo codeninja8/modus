@@ -1,0 +1,148 @@
+@mixin transition($content){
+  transition: $content;
+  -webkit-transition: $content;
+  -moz-transition: $content;
+  -o-transition: $content;
+}
+
+@mixin transform ($content) {
+  -webkit-transform: ($content);
+  -moz-transform: ($content);
+  -ms-transform: ($content);
+  -o-transform: ($content);
+  transform: ($content);
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  -o-border-radius: $radius;
+}
+
+@mixin border-radius-side($radius, $side ) {
+  @if $side == top {
+    -webkit-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+    background-clip: padding-box;
+  } @else if $side == left {
+    -webkit-border-bottom-left-radius: $radius;
+    border-bottom-left-radius: $radius;
+    -webkit-border-top-left-radius: $radius;
+    border-top-left-radius: $radius;
+    background-clip: padding-box;
+  } @else if $side == right {
+    -webkit-border-bottom-right-radius: $radius;
+    border-bottom-right-radius: $radius;
+    -webkit-border-top-right-radius: $radius;
+    border-top-right-radius: $radius;
+    background-clip: padding-box;
+  } @else {
+      -webkit-border-bottom-right-radius: $radius;
+      border-bottom-right-radius: $radius;
+      -webkit-border-bottom-left-radius: $radius;
+      border-bottom-left-radius: $radius;
+      background-clip: padding-box;
+    }
+}
+
+@mixin box-sizing($box-model) {
+  -webkit-box-sizing: $box-model; // Safari <= 5
+  -moz-box-sizing: $box-model; // Firefox <= 19
+  box-sizing: $box-model;
+}
+
+@mixin placeholder {
+  &::-webkit-input-placeholder {@content}
+  &:-moz-placeholder           {@content}
+  &::-moz-placeholder          {@content}
+  &:-ms-input-placeholder      {@content}
+}
+
+@mixin animation($content) {
+  -webkit-animation:($content);
+  -o-animation:($content);
+  animation:($content);
+}
+
+@mixin animation-delay ($delay) {
+  -webkit-animation-delay: $delay;
+  -moz-animation-delay: $delay;
+  -o-animation-delay: $delay;
+  animation-delay: $delay;
+}
+
+@mixin b-shadow($values) {
+  -webkit-box-shadow: $values;
+  -moz-box-shadow: $values;
+  box-shadow: $values;
+}
+
+@mixin h-w-same($value){
+  height: $value;
+  width: $value;
+}
+
+@mixin h-w($height, $width){
+  height: $height;
+  width: $width;
+}
+
+@mixin h-w-lh($height, $width, $height){
+  height: $height;
+  width: $width;
+  line-height: $height;
+}
+
+@mixin pt-pb-same($value){
+  padding-top: $value;
+  padding-bottom: $value;
+}
+
+@mixin pl-pr-same($value){
+  padding-left: $value;
+  padding-right: $value;
+}
+
+@mixin pt-pb ($tvalue, $bvalue){
+  padding-top: $tvalue;
+  padding-bottom: $bvalue;
+}
+
+@mixin mt-mb-same ($value){
+  margin-top: $value;
+  margin-bottom: $value;
+}
+
+@mixin mt-mb ($tvalue, $bvalue){
+  margin-top: $tvalue;
+  margin-bottom: $bvalue;
+}
+
+
+@mixin phone {
+  @media only screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin phone-hover {
+  @media only screen and (min-width: 768px) {
+    &:hover {
+      @content;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+

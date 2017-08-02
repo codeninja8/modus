@@ -1,0 +1,25 @@
+//helpers
+@import "helpers/_reset";
+@import "helpers/_veriables";
+@import "helpers/_mixins";
+@import "helpers/_placeholders";
+@import "helpers/_functions";
+
+//partials
+@import "partials/_typography";
+
+//layaouts
+@import "layout/_header";
+@import "layout/_footer";
+
+//pages
+@import "pages/_index";
+@import "pages/_about-us";
+@import "pages/_services";
+@import "pages/_contacts";
+@import "pages/_portfolio1";
+@import "pages/_portfolio-wordpress";
+@import "pages/_blog";
+
+
+

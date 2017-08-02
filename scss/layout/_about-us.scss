@@ -1,0 +1,237 @@
+.page-about {
+  @extend .home-page;
+  .breadcrumb-wrapper {
+    @extend %w100;
+    background-color: $LightGrey;
+    .container {
+      .title-list {
+        @extend %df, %jcsb, %aic, %pr;
+        min-height: 85px;
+        .breadcrumb {
+          background-color: transparent;
+          margin-bottom: 0;
+          padding: 0;
+          li {
+            @extend %darkGrey-r-12;
+            a {
+              color: inherit;
+            }
+          }
+        }
+        .title {
+          @extend %darkGrey-sb-20;
+          margin: 0;
+        }
+        &:after {
+          @extend %triangle-gray;
+        }
+      }
+    }
+  }
+  .services-wrapper {
+    padding: 45px 0 50px;
+    .article-top {
+      margin-bottom: 70px;
+      .title {
+        @extend %txtOrange-r-30;
+        margin: 0 0 20px;
+      }
+      .txt {
+        @extend %darkGrey-r-14;
+      }
+    }
+    .clients-info {
+      padding-left: 15px;
+      .subtitle {
+        margin: 0 0 20px;
+        @extend %darkGrey-eb-16;
+      }
+      .characters-outer {
+        .characters-list {
+          padding-left: 0;
+          margin-bottom: 0;
+          li {
+            @extend %GreyPar-r-13;
+            @extend %item-with-before;
+            margin-bottom: 5px;
+            &:last-of-type {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+      .progress-bar-aouter {
+        .txt {
+          @extend %GreyPar-r-13;
+          margin-bottom: 55px;
+          a {
+            @extend %txtOrange-r;
+
+            font-size: 13px;
+            text-decoration: underline;
+          }
+        }
+        .progress-bar-images {
+          @extend %df, %jcsb;
+          figure {
+            img {
+              margin-bottom: 15px;
+            }
+            figcaption {
+              @extend %darkGrey-eb-16;
+              text-align: center;
+            }
+          }
+        }
+      }
+      .clients-review {
+        padding-left: 0;
+        article {
+          .txt {
+            @extend %GreyPar-i-13;
+            background-color: $whiteGrey;
+            padding: 12px 20px 12px 20px;
+            line-height: 1.9;
+          }
+          span {
+            font-family: $font-OpenSans-r;
+          }
+        }
+        .author-name {
+          @include border-radius(5px);
+          @extend %GreyPar-sb-16;
+          text-indent: 60px;
+        }
+      }
+    }
+  }
+  .clients-wrapper-top {
+    .container-article-bottom {
+      @extend %pr;
+      padding-top: 50px;
+      .title {
+        @extend %tc;
+        @extend %darkGrey-b-40;
+        margin: 0 0 280px;
+      }
+      .articles-wrapper {
+        @extend %pa;
+        top: 165px;
+        .container {
+          padding: 0 15px;
+          .content-wrapper {
+            @include transition(all 0.5s ease);
+            @include b-shadow( 0px 4px 5px 0px $shadowGrey);
+            @include border-radius(5px);
+            @include phone-hover {
+              background-color: $white;
+              .hover-box {
+                height: 100%;
+                padding: 35px 38px 50px;
+                .txt {
+                  display: block;
+                }
+                .social-media {
+                  display: flex;
+                }
+              }
+              .link-readMore {
+                background-color: $mainOrange;
+                border-color: $lightOrange;
+              }
+            }
+            @extend %tc, %pr, %animation-bg, %pr, %df, %jcc, %aic;
+            background-color: $whiteGrey;
+            margin-bottom: 25px;
+            margin-right: 2.6%;
+            min-height: 310px;
+            padding: 10px;
+            width: 23.05%;
+            &:last-of-type {
+              margin-right: 0;
+            }
+            &.article-key {
+              @include animation-delay(2s);
+              .link-readMore {
+                @include animation-delay(2s);
+              }
+            }
+            &.article-flag {
+              @include animation-delay(4s);
+              .link-readMore {
+                @include animation-delay(4s);
+              }
+            }
+            &.article-bottle {
+              @include animation-delay(6s);
+              .link-readMore {
+                @include animation-delay(6s);
+              }
+            }
+            .hover-box {
+              @include transition(height 0.5s cubic-bezier(0.52, 1.64, 0.37, 0.66));
+              @include border-radius(5px);
+              @extend %pseudo-c-b, %pa;
+              background-color: $bgGreen;
+              cursor: default;
+              height: 0;
+              left: 0;
+              top: 0;
+              width: 100%;
+              .txt {
+                @extend %white-i-13, %tj, %dn;
+                line-height: 1.9;
+                margin: 0 0 70px;
+              }
+              .social-media {
+                @extend %social-media, %jcsb;
+                display: none;
+                li {
+                  @include border-radius(5px);
+                  @extend %df, %aic, %jcc;
+                  background-color: $grayGreen;
+                  height: 40px;
+                  margin-right: 10px;
+                  width: 40px;
+                  a {
+                  }
+                }
+              }
+            }
+            .link-readMore {
+              @extend %btn-link, %pa, %abs-h-center, %white-sb-14, %animation-link;
+              background-color: $mainGreen;
+              border-bottom: 4px solid $borderGreen;
+              bottom: -25px;
+            }
+            img {
+              @extend %w100;
+              @include border-radius(5px);
+              height: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+  .clients-wrapper-bottom {
+    .container-fluid {
+      padding: 215px 0 50px;
+      .container {
+        article {
+          margin-bottom: 55px;
+          .title {
+            @extend %txtOrange-l-40, %tc;
+            margin: 0 0 15px;
+          }
+          .txt {
+            @extend %darkGrey-r-14, %tc, %m-auto-rl;
+            max-width: 940px;
+          }
+        }
+      }
+    }
+  }
+}
+
+

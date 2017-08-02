@@ -1,0 +1,130 @@
+.page-portfolio-1 {
+  @extend .page-contacts;
+  main {
+    padding: 0 0 70px;
+    .breadcrumb-wrapper {
+      margin-bottom: 40px;
+    }
+    .navbar-default {
+      background-color: transparent;
+      border: none;
+      margin-bottom: 30px;
+      .navbar-collapse {
+        padding-left: 0;
+      }
+      li {
+        margin-right: 20px;
+        &:last-of-type {
+          margin-right: 0;
+        }
+        a {
+          @include phone-hover {
+            background-color: $darkGreen;
+            border-bottom: 3px solid $darkDarkgreen;
+            color: $white;
+          }
+          @include border-radius(5px);
+          @extend %white-sb-14;
+          background-color: $bgDarkGrey;
+          border-bottom: 3px solid $darkGrey;
+          padding: 10px;
+          &.active {
+            background-color: $darkGreen;
+            border-bottom: 3px solid $darkDarkgreen;
+          }
+        }
+      }
+    }
+    .info-outer {
+      margin-bottom: 65px;
+      .article-outer {
+        margin-bottom: 40px;
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+        .img-outer {
+          @extend %df, %aic, %jcc;
+
+          img {
+            @include border-radius(5px);
+            height: auto;
+          }
+        }
+        article {
+          .subtitle {
+            @extend %darkGrey-sb-20;
+            margin: 0 0 20px;
+          }
+          .txt {
+            @extend %darkGrey-r-13;
+            background-color: transparent;
+            line-height: 1.6;
+            margin-bottom: 60px;
+          }
+          .link-view-outer {
+            @extend %df, %jcsb;
+            .link-outer {
+              @include phone-hover {
+                cursor: pointer;
+                a {
+                  color: $lightOrange;
+                  text-decoration: none;
+                }
+                .fa {
+                  background-color: $lightOrange;
+                }
+              }
+              a {
+                @extend %darkGrey-sb-20;
+                text-decoration: none;
+              }
+              .fa {
+                @include border-radius(5px);
+                background-color: $darkDarkgreen;
+                color: $white;
+                padding: 10px;
+                margin-right: 15px;
+              }
+            }
+          }
+          .link-details {
+            @extend %link-view-more, %white-sb-14;
+          }
+        }
+      }
+    }
+    nav {
+      @extend %tc;
+      .pagination {
+        margin: 0;
+        li {
+          @extend %dib;
+          margin-right: 10px;
+          &:last-of-type {
+            margin-right: 0;
+            margin-left: 10px;
+          }
+          &:first-of-type {
+            margin-right: 20px;
+          }
+          a {
+            @include border-radius(5px);
+            @include phone-hover {
+              background-color: $mainOrange;
+              border-bottom-color: $lightOrange;
+            }
+            @extend %white-eb-16;
+            background-color: $bgDarkGrey;
+            border-bottom: 3px solid $darkGrey;
+            &.active {
+              background-color: $darkDarkgreen;
+              border-bottom-color: $darkDarkgreen;
+
+            }
+          }
+        }
+      }
+    }
+
+  }
+}

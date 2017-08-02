@@ -1,0 +1,512 @@
+%cb {
+  clear: both;
+}
+
+%dn {
+  display: none;
+}
+
+%db {
+  display: block;
+}
+
+%dib {
+  display: inline-block;
+}
+
+%df {
+  display: flex;
+}
+
+%jcc {
+  justify-content: center;
+}
+
+%jcsb {
+  justify-content: space-between;
+}
+
+%aic {
+  align-items: center;
+}
+
+%fl {
+  float: left;
+}
+
+%fr {
+  float: right;
+}
+
+%pr {
+  position: relative;
+}
+
+%pa {
+  position: absolute
+}
+
+%mln {
+  margin-left: 0 !important;
+}
+
+%tc {
+  text-align: center;
+}
+
+%tr {
+  text-align: right;
+}
+
+%tl {
+  text-align: left;
+}
+
+%tj {
+  text-align: justify;
+}
+
+%tu {
+  text-transform: uppercase;
+}
+
+%w100 {
+  width: 100%;
+}
+
+%m-auto {
+  margin: auto;
+}
+
+%m-auto-rl {
+  margin: 0 auto;
+}
+
+%ver-top-box {
+  display: inline-block;
+  vertical-align: top;
+}
+
+%clear-fix:after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+%sprite,
+%sprite-b:before {
+  background-image: url('../images/sprites/sprite.png');
+  background-repeat: no-repeat;
+}
+
+%sprite-b:before {
+  content: '';
+}
+
+/* For 2x devices */
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (-moz-min-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 3/2),
+only screen and (-o-min-device-pixel-ratio: 2/1),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 2) {
+
+  %sprite,
+  %sprite-b:before {
+    background-image: url('../images/sprites/sprite2x.png');
+    background-size: 500px auto;
+  }
+
+}
+
+/* For 3x devices */
+
+@media (-webkit-min-device-pixel-ratio: 3), (min-resolution: 480dpi) {
+  %sprite,
+  %sprite-b:before {
+    background-image: url('../images/sprites/sprite3x.png');
+    background-size: 500px auto;
+  }
+
+}
+
+/* For 4x devices */
+
+@media (-webkit-min-device-pixel-ratio: 4), (min-resolution: 640dpi) {
+  %sprite,
+  %sprite-b:before {
+    background-image: url('../images/sprites/sprite4x.png');
+    background-size: 500px auto;
+  }
+
+}
+
+%gradient {
+  background: #ffffff; /* Old browsers */
+  background: -moz-linear-gradient(top, #ffffff 0%, #e4e4e4 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ffffff 0%, #e4e4e4 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ffffff 0%, #e4e4e4 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e4e4e4', GradientType=0); /* IE6-9 */
+}
+
+%button {
+  @include transition(all 1s ease);
+  @extend %dib;
+  background-color: blue;
+  border-radius: 3px;
+  color: white;
+  padding: 20px 40px;
+  &:hover {
+    background-color: #FFF;
+    color: blue;
+  }
+}
+
+%abs-v-center {
+  @extend %pa;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+}
+
+%pseudo-c-b {
+  content: "";
+  display: block;
+}
+
+%pseudo-c-ib {
+  content: "";
+  display: inline-block;
+}
+
+%abs-h-center {
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+}
+
+%abs-center {
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+%main-heading {
+  @include mt-mb(30px, 20px);
+  @include h-w(25px, 192px);
+  @include pt-pb-same(0);
+  @extend %sprite;
+  height: 25px;
+  padding: 0;
+  text-indent: -10000px;
+  width: 192px;
+}
+
+%df-center {
+  @extend %df, %aic, %jcc;
+}
+
+%link-with-before {
+  &:before {
+    @extend %dib;
+    content: '\f105';
+    font-family: 'FontAwesome';
+    margin-right: 10px;
+  }
+}
+
+%item-with-before {
+  &:before {
+    @extend %dib;
+    color: $txtOrange;
+    content: '\f061';
+    font-family: 'FontAwesome';
+    margin-right: 10px;
+  }
+}
+
+%dropdown {
+  @include border-radius(5px);
+  @extend %pa;
+  background-color: $lightOrange;
+  left: 0;
+  min-width: 200px;
+  padding: 5px;
+  right: auto;
+  top: 50px;
+  &:before {
+    @extend %triangle;
+  }
+}
+
+%triangle {
+  @extend %pseudo-c-b, %pa;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 8px 8px 8px;
+  border-color: transparent transparent $lightOrange transparent;
+  left: 10px;
+  top: -8px;
+}
+
+%triangle-gray {
+  @extend %pseudo-c-b, %pa;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 12.5px 0 12.5px;
+  border-color: $LightGrey transparent transparent transparent;
+  left: 0;
+  top: 100%;
+
+}
+
+%btn-link {
+  @include h-w-lh(50px, 200px, 50px);
+  @include transition(all 0.5s ease);
+  @include border-radius(5px);
+  @extend %dib, %tc;
+  @include phone-hover {
+    text-decoration: none;
+  }
+}
+
+%link-view-more {
+  @extend %btn-link;
+  background-color: $mainOrange;
+  border-bottom: 4px solid $lightOrange;
+  position: relative;
+  z-index: 1;
+  &:after {
+    @include border-radius-side(5px, top);
+    @include transition(width 0.5s cubic-bezier(0.52, 1.64, 0.37, 0.66));
+    @extend %pseudo-c-ib;
+    background-color: $mainGreen;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 0;
+    z-index: -1;
+  }
+  &:focus {
+    text-decoration: none;
+  }
+  @include phone-hover {
+    border-color: $darkGreen;
+    &:after {
+      width: 100%;
+    }
+  }
+}
+
+%btn {
+  @include h-w-lh(50px, 200px, 50px);
+  @include transition(all 0.5s ease);
+  @include border-radius(5px);
+  @extend %dib, %tc;
+}
+
+%social-media {
+  padding-left: 0;
+  margin-bottom: 0;
+  @extend %df;
+  li {
+    margin-right: 25px;
+    &:last-of-type {
+      margin-right: 0;
+    }
+    a {
+      @include h-w-same(22px);
+      @extend %dib, %sprite;
+      &.fb {
+        @include phone-hover {
+          background-position: 6px -69px;
+        }
+        background-position: 6px -33px;
+      }
+      &.twitter {
+        @include phone-hover {
+          background-position: -38px -70px;
+        }
+        background-position: -38px -34px;
+      }
+      &.google {
+        @include phone-hover {
+          background-position: -84px -69px;
+        }
+        background-position: -84px -33px;
+      }
+      &.rss {
+        @include phone-hover {
+          background-position: -130px -70px;
+        }
+        background-position: -130px -34px;
+      }
+    }
+  }
+}
+
+//animations
+
+%animation-bg {
+  @include animation(bg-change 2s 1);
+}
+
+@keyframes bg-change {
+  0% {
+    background-color: $whiteGrey
+  }
+  100% {
+    background-color: $white
+  }
+}
+
+%animation-icon {
+  @include animation(color-change 2s 1);
+}
+
+@keyframes color-change {
+  0% {
+    color: $mainGreen
+  }
+  100% {
+    color: $mainOrange
+  }
+}
+
+%animation-link {
+  @include animation(link-bg-change 2s 1);
+}
+
+@keyframes link-bg-change {
+  0% {
+    background-color: $mainGreen;
+    border-color: $mainGreen
+  }
+  100% {
+    background-color: $mainOrange;
+    border-color: $mainOrange
+  }
+}
+
+%animation-readmore {
+  @include animation(link-color-change 1s infinite);
+}
+
+@keyframes link-color-change {
+  0% {
+    color: $white
+  }
+  100% {
+    color: $mainOrange
+  }
+}
+
+%animation-readmore-start {
+  @include animation(start-color-change 1s infinite);
+}
+
+@keyframes start-color-change {
+  0% {
+    color: $white
+  }
+  100% {
+    color: $mainGreen
+  }
+}
+
+%animation-logo {
+  @include animation(logo-change 2s 2s infinite);
+}
+
+@keyframes logo-change {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: -240px 0;
+  }
+}
+
+%animation-address {
+  @include animation(bounce 1s);
+}
+
+@keyframes bounce {
+  0% {
+    @include transform(translateY(-30px));
+  }
+
+  100% {
+    @include transform(translateY(0));
+  }
+}
+
+%animation-email {
+  @include animation(wrench 2.5s ease);
+}
+
+@keyframes wrench {
+  8% {
+    @include transform(rotate(12deg));
+  }
+
+  10% {
+    @include transform(rotate(24deg));
+  }
+
+  18%, 20% {
+    @include transform(rotate(-24deg));
+  }
+
+  28%, 30% {
+    @include transform(rotate(24deg));
+  }
+
+  58%, 60% {
+    @include transform(rotate(-24deg));
+  }
+
+  68% {
+    @include transform(rotate(24deg));
+  }
+
+  100%, 75% {
+    @include transform(rotate(0));
+  }
+}
+
+%animation-phone {
+  @include animation(burst 2s linear);
+}
+
+@keyframes burst {
+  0% {
+    opacity: .6;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+
+
+
+
+
+

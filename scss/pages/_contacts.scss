@@ -1,0 +1,115 @@
+.page-contacts {
+  @extend .page-about;
+  main {
+    background-color: $bgGrey;
+    padding-bottom: 235px;
+    .breadcrumb-wrapper {
+      margin-bottom: 50px;
+    }
+    .txt-outer {
+      background-color: $LightGrey;
+      padding: 30px 30px 30px 20px;
+      margin-bottom: 60px;
+      .txt {
+        @extend %GreyPar-r-13;
+        margin: 0;
+      }
+    }
+    .form-contact-wrapper {
+      .title {
+        @extend %darkGrey-sb-20;
+        margin: 0  0 60px;
+      }
+      .form-wrapper {
+        form {
+          .form-components {
+            @include b-shadow(inset 4px 4px 0px 0px rgba(0,0,0,0.05));
+            @include border-radius(5px);
+            background-color: $shadowGrey;
+            border: none;
+            color: $darkGrey;
+            padding-left: 5px;
+          }
+          .input-outer {
+            margin-bottom: 20px;
+            input {
+              @include transition(width 0.5s ease);
+              height: 40px;
+              margin-right: 30px;
+              width: 61%;
+              @include phone-hover {
+                width: 85%;
+              }
+            }
+            label {
+              @extend %darkGrey-r-18;
+              margin-bottom: 0;
+            }
+          }
+          textarea {
+            @extend %w100;
+            height: 240px;
+            margin-bottom: 25px;
+          }
+          .send-input {
+            @extend %btn, %white-r-20;
+            background-color: $mainOrange;
+            border: none;
+            border-bottom: 5px solid $lightOrange;
+            @include phone-hover {
+              @include transform(scale(0.9));
+              @include transition(all 0.5s cubic-bezier(0.47, 2.02, 0.31, -0.36));
+            }
+          }
+        }
+      }
+      .contacts-wrapper {
+        .fa {
+          margin-right: 10px;
+          color: $darkGrey;
+        }
+        .address {
+          @include phone-hover {
+            .fa {
+              @include animation(bounce 0.3s);
+            }
+          }
+          @extend %df, %aic;
+          cursor: pointer;
+          margin-bottom: 20px;
+          width: 230px;
+          .txt {
+            @extend %GreyPar-r-14;
+          }
+          .fa {
+            color: $lightOrange;
+          }
+        }
+        .phone-number {
+          @include phone-hover {
+            .fa {
+              @include animation(burst 0.5s linear infinite);
+              color: $lightOrange;
+            }
+          }
+          margin-bottom: 10px;
+          & > a {
+            @extend %GreyPar-r-16;
+          }
+        }
+        .email {
+          @include phone-hover {
+            .fa {
+              @include animation(wrench 1s ease infinite);
+              color: $lightOrange;
+            }
+          }
+          & > a {
+            @extend %lightOrange-r-16;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

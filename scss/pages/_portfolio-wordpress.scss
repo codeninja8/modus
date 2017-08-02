@@ -1,0 +1,202 @@
+.page-portfolio-1 {
+  @extend .page-contacts;
+  main {
+    padding: 0 0 90px;
+    .breadcrumb-wrapper {
+      margin-bottom: 55px;
+    }
+    .title {
+      @extend %darkGrey-b-25;
+      margin: 0 0 50px;
+    }
+    .carousel-wrapper {
+      margin-bottom: 100px;
+      .carousel-inner {
+        height: 700px;
+      }
+      .item {
+        img {
+          @include border-radius(5px);
+          height: 100%;
+          width: auto;
+        }
+      }
+      .carousel-buttons-outer {
+        min-height: 20px;
+      }
+    }
+    .article-aside-wrapper {
+      margin-bottom: 65px;
+      .subtitle {
+        @extend %darkGrey-eb-16;
+        margin: 0 0 20px;
+      }
+      .txt {
+        @extend %darkGrey-r-14;
+        &.description {
+          margin-bottom: 30px;
+        }
+      }
+      aside {
+        ul {
+          @extend %GreyPar-r-13;
+          padding-left: 0;
+          li {
+            @extend %df, %jcsb;
+            border-bottom: 1px solid $borderGrey;
+            padding: 20px 0;
+            &:first-of-type {
+              padding-top: 0;
+            }
+            &:last-of-type {
+              padding-bottom: 0;
+              border: none;
+            }
+            .link-outer {
+              font-size: 16px;
+              & > a {
+                @extend %lightOrange-r-13;
+              }
+            }
+            .fa {
+              margin-right: 15px;
+            }
+          }
+        }
+      }
+    }
+    .happy-clients-outer {
+      padding-top: 20px;
+      .heading-line {
+        @extend %pr;
+        border-bottom:1px solid $borderGrey;
+        margin-bottom: 50px;
+        .subtitle {
+          @extend %pa, %darkGrey-eb-16;
+          background-color: $bgGrey;
+          left: 0;
+          margin-bottom: 0;
+          top: -31px;
+          .circul {
+            @include border-radius(50%);
+            @extend %dib;
+            background-color: $borderGrey;
+            height: 7px;
+            margin-left: 20px;
+            width: 7px;
+          }
+        }
+        .icons-outer {
+          @extend %pa, %df;
+          background-color: $bgGrey;
+          cursor: pointer;
+          height: 38px;
+          right: 0;
+          top: -18px;
+          width: 120px;
+          .icon {
+            @include h-w(37px, 40px);
+            @include border-radius(5px);
+            @include phone-hover {
+              background-color: $mainOrange;
+              border-color: $lightOrange;
+            }
+            background-color: $bgDarkGrey;
+            border-bottom: 3px solid $darkGrey;
+            line-height: 37px;
+            text-align: center;
+            &.icon-left {
+              @include phone-hover {
+                & > .fa {
+                  padding-right: 5px;
+                }
+              }
+              margin: 0 20px;
+            }
+            &.icon-right {
+              @include phone-hover {
+                & > .fa {
+                  padding-left: 5px;
+                }
+              }
+            }
+            &.carousel-control {
+              background-image: none;
+              opacity: 1;
+            }
+            .fa {
+              @include transition(padding 0.3s ease);
+              color: $white;
+            }
+          }
+        }
+      }
+      .projects-wrapper {
+        .row {
+          margin: 0;
+        }
+        .img-outer {
+          margin-right: 2.6%;
+          padding: 0;
+          width: 23%;
+          &:last-of-type {
+            margin-right: 0;
+          }
+          @include phone-hover {
+            .hover-box {
+              height: 100%;
+              .txt {
+                opacity: 1;
+              }
+              .icons-outer {
+                display: flex;
+              }
+            }
+          }
+          .hover-box {
+            @include transition(height 0.5s cubic-bezier(0.52, 1.64, 0.37, 0.66));
+            @include border-radius(5px);
+            @extend %pa, %df, %jcc, %aic;
+            background-color: $bgGreen;
+            cursor: default;
+            height: 0;
+            left: 0;
+            top: 0;
+            width: 100%;
+            .txt {
+              @include transition(opacity 4s ease);
+              @extend %pa, %white-sb-16;
+             opacity: 0;
+              bottom: 25px;
+            }
+            .icons-outer {
+              display: none;
+              .icon-outer {
+                @extend %aic, %jcc;
+                @include border-radius(5px);
+                @include transition(background 0.5s ease);
+                height: 40px;
+                background-color: $iconBgGreen;
+                display: flex;
+                margin-right: 15px;
+                width: 40px;
+                @include phone-hover {
+                  background-color: $lightOrange;
+                }
+                &:last-of-type {
+                  margin-right: 0;
+                }
+                .fa {
+                  color: $white;
+                }
+              }
+            }
+          }
+          img {
+            @include border-radius(5px);
+          }
+        }
+      }
+    }
+  }
+}

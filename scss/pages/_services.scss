@@ -1,0 +1,64 @@
+.page-services {
+  @extend .page-about;
+  .pricing-wrapper {
+    @extend %pa;
+    top: 165px;
+    .container {
+      padding: 0 15px;
+      .pricing-table {
+        @include transition(all 0.5s ease);
+        @include b-shadow( 0px 4px 5px 0px $shadowGrey);
+        @include border-radius(5px);
+        @include phone-hover {
+          background-color: $mainGreen;
+          cursor: pointer;
+          .pricing-list {
+            li {
+              color: $white;
+              border-color: $footerGreen;
+            }
+          }
+          .link-readMore {
+            @include animation(0);
+            background-color: $mainOrange;
+            border-color: $lightOrange;
+          }
+        }
+        @extend %tc, %pr, %animation-bg, %pr, %df, %jcc;
+        background-color: $whiteGrey;
+        margin-bottom: 25px;
+        margin-right: 2.6%;
+        margin-top: 25px;
+        min-height: 310px;
+        padding: 45px 10px;
+        width: 23.05%;
+        &:last-of-type {
+          margin-right: 0;
+        }
+        .link-readMore {
+          @extend %btn-link, %pa, %abs-h-center, %white-sb-14, %animation-readmore;
+          background-color: $darkGrey;
+          border-bottom: 4px solid $darkGrey;
+          bottom: -25px;
+          &.link-readMore-top {
+            @extend %animation-readmore-start;
+            top: -25px;
+            bottom: auto;
+          }
+        }
+        .pricing-list {
+          padding-left: 0;
+          li {
+            @extend %GreyPar-r-14;
+            padding: 18px 0;
+            border-bottom: 1px solid $LightGrey;
+            &:last-of-type {
+              border: none;
+              padding-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

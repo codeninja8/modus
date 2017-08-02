@@ -1,0 +1,40 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: #FFFFFF;
+  font-size: 16px;
+  padding-top: 80px;
+}
+
+.page-wrap {
+  min-height: 100%;
+  margin-bottom: -345px;
+  &:after {
+    content: '';
+    display: block;
+    height: 345px;
+  }
+}
+
+img {
+  border: none;
+  max-width: 100%;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+.cb {
+  clear: both;
+}
+
+textarea {
+  resize: none;
+}
+
+input, textarea {
+  outline: none;
+}
